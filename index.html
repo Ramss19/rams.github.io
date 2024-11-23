@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robot Teleoperation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Robot Teleoperation Interface</h1>
+  <p>Control the robot arm and view the camera feed.</p>
+
+  <!-- Contenedor del feed de la cámara -->
+  <div id="main-container">
+    <div id="video-container">
+      <video id="camera-stream" autoplay></video>
+    </div>
+    <div id="right-panel">
+      <div id="cube-info">
+        <h2>Cube Positions</h2>
+        <p>Cube 1: <span id="cube1-position">x: 0, y: 0</span></p>
+        <p>Cube 2: <span id="cube2-position">x: 0, y: 0</span></p>
+        <p>Cube 3: <span id="cube3-position">x: 0, y: 0</span></p>
+      </div>
+      <div id="form-container">
+        <h2>Move Cube</h2>
+        <input id="cube-id" type="text" placeholder="Cube ID" required>
+        <input id="position-x" type="number" placeholder="Position X" required>
+        <input id="position-y" type="number" placeholder="Position Y" required>
+        <button id="update">Update Position</button>
+      </div>
+    </div>
+  </div>
+  <div id="button-container">
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+  </div>
+
+  <!-- Estado del robot -->
+  <div id="movement-desc">Status: Inactive</div>
+
+  <!-- Cargar el renderer.js -->
+  <script src="renderer.js"></script>
+</body>
+</html>
